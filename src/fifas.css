@@ -1,0 +1,92 @@
+.header {
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 65px;
+    font-family: "Philosopher", Georgia, 'Times New Roman', Times, serif;
+    padding-top: 50px;
+    border-bottom: 5px ridge rgb(48, 48, 48);
+    min-height: 200px;
+}
+
+nav {
+    justify-content: center;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+text {
+    color: whitesmoke;
+}
+
+h1,
+h4,
+h6 {
+    text-align: center;
+    margin-bottom: 15px
+}
+
+h5 {
+    margin-top: 10px;
+    background-color: rgba(48, 48, 48, 0.25);
+    width: fit-content;
+}
+
+.row {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.20);
+}
+
+.footer {
+    background-color: rgb(0, 0, 0);
+    color: whitesmoke;
+    margin-top: 10%;
+    bottom: 0;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    border-top: 5px ridge rgb(48, 48, 48);
+}
+
+.card {
+    border: none;
+}
+
+.card>img {
+    height: 200px;
+    width: 200px;
+    object-fit: fill;
+    align-self: center;
+    padding-top: 5px;
+}
+
+.card-title {
+    text-align: center;
+    font: bold 25px verdana;
+}
+
+.carousel {
+    height: 530px;
+    width: 100%;
+    max-width: 75rem;
+    padding: 10px;
+    margin: auto;
+}
+
+.carousel-caption {
+    background-color: rgb(194, 194, 194, 0.5);
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+.carousel-img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
