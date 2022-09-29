@@ -1,9 +1,20 @@
 import React from 'react';
+import { Card, Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 import Container from 'react-bootstrap/Container';
+import { AiFillStar } from 'react-icons/ai';
+import testimonials from '../assets/testimonials';
 
 const Home = () => {
+
+    const starRating = (rating) => {
+        let stars = [];
+        for (let i = 1; i <= rating; i++) {
+            stars.push(<AiFillStar className="star" />)
+
+        } return stars
+    }
     return (
         <Container fluid>
             <Carousel variant="dark">
@@ -36,6 +47,30 @@ const Home = () => {
             </Carousel>
             <div className="text-center">
                 <Button variant="outline-danger" size="lg" href="/contactUs" className='mx-auto w-50'>Schedule Your Quote Today!</Button>
+            </div>
+            <div className="my-5">
+                <h1>Testimonials</h1>
+                <Row>
+                    {testimonials.map((author) => {
+                        return (
+                            <Col className="my-4">
+                                <Card>
+                                    <Card.Header>{starRating(author.rating)}</Card.Header>
+                                    <Card.Body>
+                                        <blockquote className="blockquote mb-0">
+                                            <p>
+                                                {author.comments}
+                                            </p>
+                                            <footer className="blockquote-footer">
+                                                {author.name}
+                                            </footer>
+                                        </blockquote>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        )
+                    })}
+                </Row>
             </div>
         </Container>
     )
