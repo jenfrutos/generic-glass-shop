@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link, NavLink } from 'react-router-dom';
 
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,7 +21,7 @@ const Header = () => {
     return (
         <>
             <Container fluid className="header" >
-                <a href="/"><text>THE GLASS SHOP</text></a>
+                <Link to="/" style={{ color: "whitesmoke" }}>THE GLASS SHOP</Link>
             </Container>
 
             <Modal show={show} onHide={handleClose}>
@@ -49,11 +50,21 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="navbar" />
                 <Navbar.Collapse id="navbar">
                     <Nav className="mx-auto">
-                        <Nav.Link className="mx-4" href="/">Home</Nav.Link>
-                        <Nav.Link className="mx-4" href="/services">Services</Nav.Link>
-                        <Nav.Link className="mx-4" href="/product">Product Samples</Nav.Link>
-                        <Nav.Link className="mx-4" href="/contactUs">Contact Us</Nav.Link>
-                        <Navbar.Text><Button variant="link" size="sm" onClick={handleShow}><FontAwesomeIcon icon={faUser} size="xl" className="text-dark" /></Button></Navbar.Text>
+                        <Navbar.Text className="mx-3">
+                            <NavLink to="/" >Home</NavLink>
+                        </Navbar.Text>
+                        <Navbar.Text className="mx-3">
+                            <NavLink to="/services" >Services</NavLink>
+                        </Navbar.Text>
+                        <Navbar.Text className="mx-3">
+                            <NavLink to="/product" >Product Samples</NavLink>
+                        </Navbar.Text>
+                        <Navbar.Text className="mx-3">
+                            <NavLink to="/contactUs" >Contact Us</NavLink>
+                        </Navbar.Text>
+                        <Navbar.Text className="mx-3">
+                            <Button variant="link" size="sm" onClick={handleShow}><FontAwesomeIcon icon={faUser} size="xl" className="text-dark" /></Button>
+                        </Navbar.Text>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
